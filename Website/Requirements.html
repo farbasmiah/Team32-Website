@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Requirements - Automating PLORAS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	
+	<!-- Custom CSS -->
+    <link href="landing.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top topnav">
+        <div class="container topnav">
+		
+            <!-- Logo -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Menu Items -->
+            <div class="collapse navbar-collapse" id="mainNavBar">
+                <ul class="nav navbar-nav">
+                    <li><a href="./index.html" class="navbar-brand">Automating PLORAS</a></li>
+                    <li class="dropdown">
+                        <a href="./Background.html" class="dropdown-toggle" data-toggle="dropdown">Background <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./Background.html">The Clients</a></li>
+                            <li><a href="./Background.html#context">Context</a></li>
+                            <li><a href="./Background.html#initial">Initial Problem</a></li>
+							<li><a href="./Background.html#goals">Goals for Success</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="./Project Management.html" class="dropdown-toggle" data-toggle="dropdown">Project Management <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./Project Management.html">Record of Progress</a></li>
+                            <li><a href="./Project Management.html#reports">Bi-weekly Reports</a></li>
+                            <li><a href="./Project Management.html#meeting">Meeting Minutes</a></li>
+                        </ul>
+                    </li>
+                    <li class="active" class="dropdown">
+                        <a href="./Requirements.html" class="dropdown-toggle" data-toggle="dropdown">Requirements <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./Requirements.html">Initial Requirements</a></li>
+                            <li><a href="./Requirements.html#gathering">Gathering Requirements</a></li>
+                            <li><a href="./Requirements.html#final">Final Requirements</a></li>
+                        </ul>
+                    </li>
+					<li class="dropdown">
+                        <a href="./Research.html" class="dropdown-toggle" data-toggle="dropdown">Research <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./Research.html">Results</a></li>
+                            <li><a href="./Research.html#decisions">Decisions</a></li>
+                            <li><a href="./Research.html#sources">Sources</a></li>
+                            <li><a href="./Research.html#hci">HCI Analysis</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="./Development.html" class="dropdown-toggle" data-toggle="dropdown">Development <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./Development.html">Prototypes</a></li>
+                            <li><a href="./Development.html#interface">User Interface</a></li>
+                            <li><a href="./Development.html#server">Server Side</a></li>
+                            <li><a href="./Development.html#plans">Plans for PoC</a></li>
+                            <li><a href="./Development.html#testing">Testing</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!--right align -->
+                <ul class="nav navbar-nav navbar-right">
+					<li><a href="http://uclteam32ploras.freeforums.net">Forum</a></li>
+                    <li><a href="https://github.com/jstuczyn/Team-32-System-Engineering-Project">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+	
+	<!-- Content row 1 -->
+    <div class="content-section-a">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <hr class="section-heading-spacer">
+                    <!-- clearfix makes it so elements are not side by side -->
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Initial Requirements</h2>
+					<p>
+						We initially met up with our clients to gain a general understanding of our role as Computer Scientists for the project. This allowed us to obtain a set 
+						of initial project requirements which we have been able to build upon in more detail as we have progressed.
+						<li>Create a user interface that will allow hospitals to upload brain scans</li>
+						<li>Stream line the PLORAS team's current software so that scans can be read and predictions made automatically</li>
+						<li>Summarise the predictions (using a look up table) in a meaningful medical report</li>
+						<li>Allow the medical staff access to this medical report</li>
+					</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content row 2 -->
+	<a name="gathering"></a>
+	<div class="content-section-b">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <hr class="section-heading-spacer">
+                    <!-- clearfix makes it so elements are not side by side -->
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Gathering Requirements</h2>
+					<p>
+						To obtain a clear cut set of detailed project requirements, we had to work closely with the clients to take into consideration what they wanted in their 
+						user interface as well as other aspects of the prediction service. 
+					</p>
+					<p class="lead">
+						Performance & Capabilities
+                    </p>
+					<p>
+						Our application is primarily focused on user experience and the back-end of the application. It is therefore crucial that it is as performance efficient as 
+						possible. It is especially important as the back-end processes take several minutes to process and every improvement would significantly help the PLORAS 
+						team in processing more patients and generating recovery predictions for them. As for the operational capabilities of the system, the application has got to 
+						be stable, as any crash or unpredicted flow of the program might result in the final result being wrong and therefore producing inaccurate  predictions for 
+						a patient. However, we currently are not sure of the final capabilities of the system as we have not yet seen the machine our application is going to run on 
+						and in some aspects we can only speculate.
+					</p>
+					<p>
+						We also produced some Use Cases to better understand the system's behaviour as it responds to requests from a user. 
+					</p>
+					<p class="lead">
+						Use Cases
+                    </p>
+					<p>
+						<table class="table table-bordered table-striped">
+							<thead>
+								<tr class="success">
+									<th>ID</th>
+									<th>Use Case Name</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>UC1</td>
+									<td>NewAccount</td>
+								</tr>
+								<tr>
+									<td>UC2</td>
+									<td>PasswordReminder</td>
+								</tr>
+								<tr>
+									<td>UC3</td>
+									<td>NewPatient</td>
+								</tr>
+								<tr>
+									<td>UC4</td>
+									<td>ReviewPatient</td>
+								</tr>
+							</tbody>
+						</table>
+					</p>
+					<p>
+						A description of each use case is shown below:
+					</p>
+					<p>
+						<table class="table table-bordered table-striped">
+							<tbody>
+								<tr>
+									<th class="success">Use Case</th>
+									<td>NewAccount</td>
+								</tr>
+								<tr>
+									<th class="success">ID</th></th>
+									<td>UC1</td>
+								</tr>
+								<tr>
+									<th class="success">Brief Description</th>
+									<td>A member of hospital staff wants to request an account.</td>
+								</tr>
+								<tr>
+									<th class="success">Primary Actors</th>
+									<td>Hospital Staff Member</td>
+								</tr>
+								<tr>
+									<th class="success">Secondary Actors</th>
+									<td>PLORAS Team Member</td>
+								</tr>
+								<tr>
+									<th class="success">Preconditions</th>
+									<td>None</td>
+								</tr>
+								<tr>
+									<th class="success">Main flow</th>
+									<td><ol>
+										<li>The user chooses an option to request a new account in order to be able to access the system.</li>
+										<li>System generates a request form to be filled in by Hospital Staff Member</li>
+										<li>Hospital Staff Member fills in request form and submits.</li>
+										<li>System sends notification to PLORAS team member(s) notifying the access request.</li>
+										<li> PLORAS team member discusses with rest of team to decide whether to grant the user access to the system.</li>
+										<li>Team accept request, PLORAS Team Member creates an entry in the database with login details. </li>
+										<li>PLORAS Team member sends user  details to Hospital Staff Member.</li>
+									</ol></td>
+								</tr>
+								<tr>
+									<th class="success">Post conditions</th>
+									<td>Database contains new entry and Hospital Staff Member now has access to system</td>
+								</tr>
+								<tr>
+									<th class="success">Alternative flows.</th>
+									<td><p>6.a Team do not accept request due to incomplete form / errors in form.<br>
+								    7.a PLORAS Team Member contacts Hospital Staff Member to request form resubmission.<br>
+								    8.a Return to step 1.</p>
+								    <p>6.b Team do not accept request due to lack of access requirements.<br>
+								    7.b. PLORAS Team Member contacts Hospital Staff Member to inform reason of application rejection.</p></td>
+								</tr>
+							</tbody>
+						</table>
+					</p>
+					<p>
+						<table class="table table-bordered table-striped">
+							<tbody>
+								<tr>
+									<th class="success">Use Case</th>
+									<td>PasswordReminder</td>
+								</tr>
+								<tr>
+									<th class="success">ID</th></th>
+									<td>UC2</td>
+								</tr>
+								<tr>
+									<th class="success">Brief Description</th>
+									<td>A member of hospital staff forgot their password to their account.</td>
+								</tr>
+								<tr>
+									<th class="success">Primary Actors</th>
+									<td>Hospital Staff Member</td>
+								</tr>
+								<tr>
+									<th class="success">Secondary Actors</th>
+									<td> PLORAS Team Member</td>
+								</tr>
+								<tr>
+									<th class="success">Preconditions</th>
+									<td>Hospital Staff Member has a pre existing account</td>
+								</tr>
+								<tr>
+									<th class="success">Main flow</th>
+									<td><ol>
+										<li>Hospital Staff Member chooses  option to request a password reminder to the account.</li>
+										<li> System generates a request and sends it to PLORAS Team Member.</li>
+										<li>PLORAS Team Member checks validity of account ownership and generates new password.</li>
+										<li>PLORAS Team Member updates the database entry.</li>
+										<li> PLORAS Team Member sends  the password to Hospital Staff Member.</li>
+									</ol></td>
+								</tr>
+								<tr>
+									<th class="success">Post conditions</th>
+									<td>Database contains new password, account can be accessed using only the new password</td>
+								</tr>
+								<tr>
+									<th class="success">Alternative flows</th>
+									<td>3.a. PLORAS Team Member cannot confirm validity of request.<br>
+									  4.b. PLORAS Team Member contacts Hospital Staff Member in order to check identity.<br>
+									  5.b. Return to Step 3.</td>
+								</tr>
+							</tbody>
+						</table>
+					</p>
+					<p>
+						<table class="table table-bordered table-striped">
+							<tbody>
+								<tr>
+									<th class="success">Use Case</th>
+									<td>NewPatientAnalysis</td>
+								</tr>
+								<tr>
+									<th class="success">ID</th></th>
+									<td>UC3</td>
+								</tr>
+								<tr>
+									<th class="success">Brief Description</th>
+									<td>A member of hospital staff wants to generate a prediction for their patient.</td>
+								</tr>
+								<tr>
+									<th class="success">Primary Actors</th>
+									<td>Hospital Staff Member</td>
+								</tr>
+								<tr>
+									<th class="success">Secondary Actors</th>
+									<td>None</td>
+								</tr>
+								<tr>
+									<th class="success">Preconditions</th>
+									<td>Hospital Staff Member is logged in to the system.</td>
+								</tr>
+								<tr>
+									<th class="success">Main flow</th>
+									<td><ol>
+										<li>Hospital Staff Member chooses  option to generate recovery prediction for a new patient.</li>
+										<li> System generates form and displays to Hospital Staff Member.</li>
+										<li>Hospital Staff Member Fills in form using relevant patient information and submits.</li>
+										<li>System checks form information is valid using type checking and displays upload files option.</li>
+										<li>Hospital Staff Member selects files for upload and submits.</li>
+										<li>If the scans are in the Dicom format,  System checks whether the number of uploaded files is a multiple of 176.</li>
+										<li>Hospital Staff Member confirms all the provided information.</li>
+										<li>System adds new processing request to the processing queue.</li>
+									</ol></td>
+								</tr>
+								<tr>
+									<th class="success">Post conditions</th>
+									<td>None</td>
+								</tr>
+								<tr>
+									<th class="success">Alternative flows</th>
+									<td>4.a. System detects incorrect input.<br>
+									  5.a System displays message to Hospital Staff Member informing of where error is.<br>
+									  6.a. Return to Step 3.<br>
+									  <br>
+								    7.b. Go to NewPatient:InvalidNumberOfFiles</td>
+								</tr>
+							</tbody>
+						</table>
+					</p>
+					<p>
+						<table class="table table-bordered table-striped">
+							<tbody>
+								<tr>
+									<th class="success">Use Case</th>
+									<td>NewPatient:InvalidNumberOfFiles</td>
+								</tr>
+								<tr>
+									<th class="success">ID</th></th>
+									<td>UC3.1</td>
+								</tr>
+								<tr>
+									<th class="success">Brief Description</th>
+									<td>A member of hospital staff uploaded an invalid number of Dicom format scans.</td>
+								</tr>
+								<tr>
+									<th class="success">Primary Actors</th>
+									<td>Hospital Staff Member</td>
+								</tr>
+								<tr>
+									<th class="success">Secondary Actors</th>
+									<td>None</td>
+								</tr>
+								<tr>
+									<th class="success">Preconditions</th>
+									<td>The user has tried to upload an invalid number of Dicom format scans.</td>
+								</tr>
+								<tr>
+									<th class="success">Main flow</th>
+									<td><ol>
+										<li>The user tries to upload a number of Dicom format scans which is not a multiple of 176.</li>
+										<li>The system shows an error to the user prompting them to recheck their files and re-upload them.</li>
+										<li>The use case is repeated until the number of files in the Dicom format is appropriate.</li>
+										<li>The user confirms all the provided information.</li>
+										<li>The system adds new processing request to the processing queue</li>
+									</ol></td>
+								</tr>
+								<tr>
+									<th class="success">Post conditions</th>
+									<td>None</td>
+								</tr>
+								<tr>
+									<th class="success">Alternative flows</th>
+									<td>NewPatient:InvalidNumberOfFiles</td>
+								</tr>
+							</tbody>
+						</table>
+					</p>
+					<p>
+						<table class="table table-bordered table-striped">
+							<tbody>
+								<tr>
+									<th class="success">Use Case</th>
+									<td>ReviewPatient</td>
+								</tr>
+								<tr>
+									<th class="success">ID</th></th>
+									<td>UC4</td>
+								</tr>
+								<tr>
+									<th class="success">Brief Description</th>
+									<td>A member of hospital staff wants to review predictions for an existing patient.</td>
+								</tr>
+								<tr>
+									<th class="success">Primary Actors</th>
+									<td>Hospital Staff Member</td>
+								</tr>
+								<tr>
+									<th class="success">Secondary Actors</th>
+									<td>None</td>
+								</tr>
+								<tr>
+									<th class="success">Preconditions</th>
+									<td>Hospital Staff Member is logged in to system, and has requested processing for at least one patient.</td>
+								</tr>
+								<tr>
+									<th class="success">Main flow</th>
+									<td><ol>
+										<li>Hospital Staff Member chooses  option to review predictions for one of their patients.</li>
+										<li> System generates and displays table with basic information about patients previously processed by Hospital Staff Member.</li>
+										<li>Hospital Staff Member chooses  option to select to review a particular patient.</li>
+										<li>The system generates and displays  table presenting likelihood of speech recovery in upcoming years to Hospital Staff Member.</li>
+									</ol></td>
+								</tr>
+								<tr>
+									<th class="success">Post conditions</th>
+									<td>None</td>
+								</tr>
+								<tr>
+									<th class="success">Alternative flows</th>
+									<td>ReviewPatient:ProcessingError, ReviewPatient:IncompleteProcessing</td>
+								</tr>
+							</tbody>
+						</table>
+					</p>
+					<p>
+						<table class="table table-bordered table-striped">
+							<tbody>
+								<tr>
+									<th class="success">Use Case</th>
+									<td>ReviewPatient:ProcessingError</td>
+								</tr>
+								<tr>
+									<th class="success">ID</th></th>
+									<td>UC4.1</td>
+								</tr>
+								<tr>
+									<th class="success">Brief Description</th>
+									<td>A member of hospital staff wants to review predictions for the existing patient.</td>
+								</tr>
+								<tr>
+									<th class="success">Primary Actors</th>
+									<td>Hospital Staff Member</td>
+								</tr>
+								<tr>
+									<th class="success">Secondary Actors</th>
+									<td>None</td>
+								</tr>
+								<tr>
+									<th class="success">Preconditions</th>
+									<td>Hospital Staff Member is logged in to system, and has requested processing for at least one patient.</td>
+								</tr>
+								<tr>
+									<th class="success">Main flow</th>
+									<td><ol>
+										<li>Hospital Staff Member chooses an option to review a particular patient.</li>
+										<li>System displays  message informing that there was an error during processing of the patient’s scans.</li>
+										<li>System advises Hospital Staff Member to rerun the procedure and if the problem persists, to contact a member of the PLORAS team.</li>
+									</ol></td>
+								</tr>
+								<tr>
+									<th class="success">Post conditions</th>
+									<td>None</td>
+								</tr>
+								<tr>
+									<th class="success">Alternative flows</th>
+									<td>None</td>
+								</tr>
+							</tbody>
+						</table>
+					</p>
+					<p>
+						<table class="table table-bordered table-striped">
+							<tbody>
+								<tr>
+									<th class="success">Use Case</th>
+									<td>ReviewPatient:IncompleteProcessing</td>
+								</tr>
+								<tr>
+									<th class="success">ID</th></th>
+									<td>UC4.2</td>
+								</tr>
+								<tr>
+									<th class="success">Brief Description</th>
+									<td>A member of hospital staff wants to review predictions for the existing patient.</td>
+								</tr>
+								<tr>
+									<th class="success">Primary Actors</th>
+									<td>Hospital Staff Member</td>
+								</tr>
+								<tr>
+									<th class="success">Secondary Actors</th>
+									<td>None</td>
+								</tr>
+								<tr>
+									<th class="success">Preconditions</th>
+									<td>Hospital Staff Member is logged in to system, and has requested processing for at least one patient.</td>
+								</tr>
+								<tr>
+									<th class="success">Main flow</th>
+									<td><ol>
+										<li>Hospital Staff Member chooses an option to review a particular patient.</li>
+										<li>System displays information that the processing has not been completed yet and advices Hospital Staff Member to try again later.</li>
+										<li>System generates and displays an approximate remaining time.</li>
+									</ol></td>
+								</tr>
+								<tr>
+									<th class="success">Post conditions</th>
+									<td>None</td>
+								</tr>
+								<tr>
+									<th class="success">Alternative flows</th>
+									<td>None</td>
+								</tr>
+							</tbody>
+						</table>
+					</p>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	<!-- Content row 3 -->
+	<a name="final"></a>
+    <div class="content-section-a">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <hr class="section-heading-spacer">
+                    <!-- clearfix makes it so elements are not side by side -->
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Final Requirements</h2>
+					<p>
+						The requirements we have gathered in the table below have been obtained from: 
+						<li>Client interviews</li>
+						<li>Use cases</li>
+						<li>HCI analysis</li>
+						<li>UI prototyping</li>
+					</p>
+					<p>
+						The requirements are set out in the MoSCoW style format where they are ordered in order of priority. We shall aim to get the more important Must Have and 
+						Should Have requirements completed by the end of the project with the less important requirements held with a lesser priority.
+					</p>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr class="success">
+								<th>ID</th>
+								<th>Details</th>
+								<th>Type</th>
+								<th>Activity</th>
+								<th>Priority</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>RQ1</td>
+								<td>The system shall produce lesion identification information from raw fMRI images automatically.</td>
+								<td>Functional</td>
+								<td>Processing</td>
+								<td>Must Have</td>
+							</tr>
+							<tr>
+								<td>RQ2</td>
+								<td>The system shall output an excel file showing the percentage damage to specified areas of the brain automatically.</td>
+								<td>Functional</td>
+								<td>Processing</td>
+								<td>Must Have</td>
+							</tr>
+							<tr>
+								<td>RQ3</td>
+								<td>The system shall use the excel data to perform a lookup through the PLORAS database in order to produce a patient prognosis automatically.</td>
+								<td>Functional</td>
+								<td>Processing</td>
+								<td>Must Have</td>
+							</tr>
+							<tr>
+								<td>RQ4</td>
+								<td>The system shall be a web application to allow upload of patient scans.</td>
+								<td>Functional</td>
+								<td>User Interface</td>
+								<td>Must Have</td>
+							</tr>
+							<tr>
+								<td>RQ5</td>
+								<td>The system shall ensure all data uploaded and downloaded is encrypted.</td>
+								<td>Functional</td>
+								<td>Security</td>
+								<td>Must Have</td>
+							</tr>
+                         <tr>
+								<td>RQ6</td>
+								<td>The system should be secure against cyber attacks.</td>
+								<td>Non-Functional</td>
+								<td>Security</td>
+								<td>Must Have</td>
+							</tr>
+							<tr>
+								<td>RQ7</td>
+								<td>The system shall use a server to receive uploaded scans and then run the automated processes on them to generate a prediction.</td>
+								<td>Functional</td>
+								<td>Processing</td>
+								<td>Must Have</td>
+							</tr>
+							<tr>
+								<td>RQ8</td>
+								<td>The system shall display the patient prediction in HTML on the web application.</td>
+								<td>Functional</td>
+								<td>Results</td>
+								<td>Must Have</td>
+							</tr>
+							<tr>
+								<td>RQ9</td>
+								<td>The system shalll have a login page to control access the web app.</td>
+								<td>Functional</td>
+								<td>Security</td>
+								<td>Must Have</td>
+							</tr>
+							<tr>
+								<td>RQ10</td>
+								<td>The system shall permanently store all uploaded images.</td>
+								<td>Functional</td>
+								<td>Processing</td>
+								<td>Should Have</td>
+							</tr>
+							<tr>
+								<td>RQ11</td>
+								<td>The system shall include compulsory data to be filled in with the upload of every scan.</td>
+								<td>Functional</td>
+								<td>User Interface</td>
+								<td>Should Have</td>
+							</tr>
+                         <tr>
+                         		<td>RQ12</td>
+                             <td>The system should have an attractive design.</td>
+                             <td>Non-functional</td>
+                             <td>Design</td>
+                             <td>Should Have</td>
+                         </tr>
+							<tr>
+								<td>RQ13</td>
+								<td>The system shall allow a print friendly version of the patient prediction to be downloaded.</td>
+								<td>Functional</td>
+								<td>Results</td>
+								<td>Could Have</td>
+							</tr>
+							<tr>
+								<td>RQ14</td>
+								<td>The system shall have an additional comments section for extra information with the uploaded scan.</td>
+								<td>Functional</td>
+								<td>User Interface</td>
+								<td>Could Have</td>
+							</tr>
+							<tr>
+								<td>RQ15</td>
+								<td>The system shall not store uploaded images if requested by patient</td>
+								<td>Functional</td>
+								<td>Processing</td>
+								<td>Could Have</td>
+							</tr>
+							<tr>
+								<td>RQ16</td>
+								<td>The system shall present a picture of the brain scan image in the results page.</td>
+								<td>Functional</td>
+								<td>Results</td>
+								<td>Would Have</td>
+							</tr>
+							<tr>
+								<td>RQ17</td>
+								<td>The system shall have a desktop application to allow offline usage of the prediction service.</td>
+								<td>Functional</td>
+								<td>General</td>
+								<td>Would Have</td>
+							</tr>
+							<tr>
+								<td>RQ18</td>
+								<td>The system should allow scans from different types of MRI scanners.</td>
+								<td>Non-Functional</td>
+								<td>General</td>
+								<td>Would Have</td>
+							</tr>
+						</tbody>
+					</table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

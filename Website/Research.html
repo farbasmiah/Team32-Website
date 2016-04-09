@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Research - Automating PLORAS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	
+	<!-- Custom CSS -->
+    <link href="landing.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top topnav">
+        <div class="container topnav">
+		
+            <!-- Logo -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Menu Items -->
+            <div class="collapse navbar-collapse" id="mainNavBar">
+                <ul class="nav navbar-nav">
+                    <li><a href="./index.html" class="navbar-brand">Automating PLORAS</a></li>
+                    <li class="dropdown">
+                        <a href="./Background.html" class="dropdown-toggle" data-toggle="dropdown">Background <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./Background.html">The Clients</a></li>
+                            <li><a href="./Background.html#context">Context</a></li>
+                            <li><a href="./Background.html#initial">Initial Problem</a></li>
+							<li><a href="./Background.html#goals">Goals for Success</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="./Project Management.html" class="dropdown-toggle" data-toggle="dropdown">Project Management <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./Project Management.html">Record of Progress</a></li>
+                            <li><a href="./Project Management.html#reports">Bi-weekly Reports</a></li>
+                            <li><a href="./Project Management.html#meeting">Meeting Minutes</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="./Requirements.html" class="dropdown-toggle" data-toggle="dropdown">Requirements <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./Requirements.html">Initial Requirements</a></li>
+                            <li><a href="./Requirements.html#gathering">Gathering Requirements</a></li>
+                            <li><a href="./Requirements.html#final">Final Requirements</a></li>
+                        </ul>
+                    </li>
+					<li class="active" class="dropdown">
+                        <a href="./Research.html" class="dropdown-toggle" data-toggle="dropdown">Research <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./Research.html">Results</a></li>
+                            <li><a href="./Research.html#decisions">Decisions</a></li>
+                            <li><a href="./Research.html#sources">Sources</a></li>
+                            <li><a href="./Research.html#hci">HCI Analysis</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="./Development.html" class="dropdown-toggle" data-toggle="dropdown">Development <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./Development.html">Prototypes</a></li>
+                            <li><a href="./Development.html#interface">User Interface</a></li>
+                            <li><a href="./Development.html#server">Server Side</a></li>
+                            <li><a href="./Development.html#plans">Plans for PoC</a></li>
+                            <li><a href="./Development.html#testing">Testing</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!--right align -->
+                <ul class="nav navbar-nav navbar-right">
+					<li><a href="http://uclteam32ploras.freeforums.net">Forum</a></li>
+                    <li><a href="https://github.com/jstuczyn/Team-32-System-Engineering-Project">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+	
+	<!-- Content row 1 -->
+    <div class="content-section-a">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <hr class="section-heading-spacer">
+                    <!-- clearfix makes it so elements are not side by side -->
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Results</h2>
+					<p>
+						Upon meeting with our client initially, we discovered that a certain amount of our work was inflexible as it relied on third party programs. We needed to 
+						use MATLAB and SPM, a specialist neuroscience tool kit for MATLAB. We thus needed to learn more about the following below: 
+					</p>
+					<p class="lead">
+						MATLAB, SPM and ALI
+                    </p>
+					<p>
+						As mentioned above, a significant part of our project relies on third party scripts and toolboxes. The whole idea of our project is to create a way for 
+						hospital staff to send and process their patient’s scans in order to predict their chances of speech recovery. Currently the processing is done manually 
+						by the PLORAS team by inserting data into some specialized MATLAB scripts which are part of ALI (Automatic Lesion Identification) which is an additional 
+						toolbox to the SPM (Statistical Parametric Mapping) toolbox. The whole processing has several sub-steps with different required data and each of them 
+						requires results from previous steps.
+					</p>
+					<p>
+						With the above in mind, there was still a need to produce a front end of some sorts to fetch 
+						the location of the scan files as well as select an output directory for the script outputs. In order to do this, we established two approaches. At first 
+						our thinking was to produce some sort of cross-platform application but this later evolved to a web application running MATLAB on a server. This section 
+						documents our research into these two areas:
+					</p>
+					<p class="lead">
+						Cross-Platform Desktop Application
+                    </p>
+					<h4>
+						Java
+					</h4>
+					<p>
+						One language that is well known for its cross platform versatility, with one of the original intentions of it being to be a true "write once, run anywhere" 
+						language, Java is used on a massive range of devices and is one of the widest used languages around. The advantage of Java is that it only needs writing 
+						once and there is no extra time compiling for each OS. The disadvantage is that it relies on the user’s machine having a version of the Java Virtual Machine 
+						installed on it, which in the case of hospitals cannot be guaranteed and would require an extra step for them in terms of preparing the software for use.
+					</p>
+					<h4>
+						C++
+					</h4>
+					<p>
+						Another potential option is to use C++, offering a much lower level of memory access and management than Java. This also presents a hazard in terms of 
+						ensuring the program remains memory leak free. C++ is used in a range of contexts from office applications to operating systems. The advantage compared to 
+						Java is obviously that it does not require prior installation of anything. The difficulty is that it needs compiling for each OS and architecture. It also 
+						needs a GUI for each OS although this can be overcome by using a cross platform GUI kit such as wxWidgets.
+					</p>
+					<p class="lead">
+						Web Application
+					</p>
+					<p>
+						The advantage to a web application is that because it is run on a server it requires no installation on the user’s machine. Therefore it is the ultimate in 
+						terms of cross-platform compatibility. Although, the server does needs to have a compatible version of the code. For our application, it will also be 
+						necessary to consider the security of the app due to the fact that it deals with patient data (although it is somewhat anonymised.
+					</p>
+					<h4>
+						Django
+					</h4>
+					<p>
+						Django is a high level web framework based on the popular language Python, well known for its principle of “don’t repeat yourself”. Having researched, we 
+						discovered that other web apps have been built using Django, making calls to MATLAB which is exactly what we need to do for our project.
+					</p>
+					<h4>
+						Rails
+					</h4>
+					<p>
+						Rails is another web framework based on the language Ruby. Once again it relies on the “don’t repeat yourself” ideology. Although our team have some 
+						experience with this framework, we weren’t sure about how we would go about making the calls to MATLAB. Fortunately, this is something that other people 
+						have done before and documented.
+					</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content row 2 -->
+	<a name="decisions"></a>
+	<div class="content-section-b">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <hr class="section-heading-spacer">
+                    <!-- clearfix makes it so elements are not side by side -->
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Decisions</h2>
+					<p>
+						We had to make major decisions for the front-end which consists of the user interface and also the back-end which would be the server side of things. Our 
+						decisions can be seen below with usability and ease of production being the key drivers in leading to the conclusions that were made.
+					</p>
+					<p class="lead">
+						Back-End
+                    </p>
+					<p>
+						If we were to develop those scripts ourselves from scratch, we would almost surely have failed as besides the extensive computing knowledge, we would have 
+						to learn a significant chunk of neurobiology on how the brain works, what the purposes of its given parts are and so on. Therefore, the obvious and only 
+						choice was to automate the existing scripts and so MATLAB, SPM and ALI had to be included in our project as they were to be the core of the project. The 
+						next step we had taken in our research consisted of learning which functions from the toolboxes are used in processing patients’ scans, how they work and 
+						what data they require and produce. 
+					</p>
+					<p class="lead">
+						Front-End
+                    </p>
+					<p>
+						Ultimately our findings have led us to believe that a web based application would be the superior solution with either Django or Rails being very much 
+						acceptable development platforms. This is due solely to the superior cross-platform abilities and lack of installation requirements. For a C++ or Java 						
+						application, it would be a bigger hassle for the hospital to have to install the required application as well as any add ons that are required to make 
+						it work for every single computer. This therefore showed that a web based application would be the least tedious method for uploading scans and retrieving 
+						the results.  
+					</p>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	<!-- Content row 3 -->
+	<a name="sources"></a>
+    <div class="content-section-a">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <hr class="section-heading-spacer">
+                    <!-- clearfix makes it so elements are not side by side -->
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Sources</h2>
+					<p class="lead">
+						COMP204P: OCT-DEC
+                    </p>
+					<p>
+						<table class="table table-bordered table-striped">
+							<thead>
+								<tr class="success">
+									<th>Date of First Usage</th>
+									<th>Resource</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>07/10/15</td>
+									<td>https://www.ucl.ac.uk/ploras</td>
+								</tr>
+								<tr>
+									<td>12/10/15</td>
+									<td>https://github.com/</td>
+								</tr>
+								<tr>
+									<td>12/10/15</td>
+									<td>https://slack.com</td>
+								</tr>
+								<tr>
+									<td>15/10/15</td>
+									<td>http://ccpweb.wustl.edu/pdfs/spm8processingman.pdf</td>
+								</tr>
+								<tr>
+									<td>15/10/15</td>
+									<td>http://www.fil.ion.ucl.ac.uk/spm/doc/</td>
+								</tr>
+								<tr>
+									<td>16/10/15</td>
+									<td>https://hippocampish.wordpress.com/2013/03/19/setting-up-a-subject-batch-script-with-spm8/</td>
+								</tr>
+								<tr>
+									<td>16/10/15</td>
+									<td>http://uk.mathworks.com/help/matlab/</td>
+								</tr>
+								<tr>
+									<td>16/10/15</td>
+									<td>http://swdb.ucl.ac.uk/</td>
+								</tr>
+								<tr>
+									<td>24/10/15</td>
+									<td>http://getbootstrap.com/</td>
+								</tr>
+								<tr>
+									<td>25/10/15</td>
+									<td>http://www.w3schools.com/</td>
+								</tr>
+								<tr>
+									<td>27/10/15</td>
+									<td>https://en.wikipedia.org/wiki/Write_once,_run_anywhere</td>
+								</tr>
+								<tr>
+									<td>27/10/15</td>
+									<td>https://anturis.com/blog/java-virtual-machine-the-essential-guide/</td>
+								</tr>
+								<tr>
+									<td>28/10/15</td>
+									<td>http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4296.pdf</td>
+								</tr>
+								<tr>
+									<td>29/10/15</td>
+									<td>https://www.wxwidgets.org/docs/book/</td>
+								</tr>
+								<tr>
+									<td>03/11/15</td>
+									<td>https://docs.djangoproject.com/en/1.9/misc/design-philosophies/</td>
+								</tr>
+								<tr>
+									<td>04/11/15</td>
+									<td>http://stackoverflow.com/questions/5831495/deploying-matlab-app-on-the-web-using-python</td>
+								</tr>
+								<tr>
+									<td>06/11/15</td>
+									<td>https://en.wikibooks.org/wiki/Ruby_on_Rails/Getting_Started/Don´t_repeat_yourself</td>
+								</tr>
+								<tr>
+									<td>06/11/15</td>
+									<td>http://stackoverflow.com/questions/12774624/rails-3-asynchronous-external-programs</td>
+								</tr>
+								<tr>
+									<td>10/11/15</td>
+									<td>https://en.wikipedia.org/wiki/MoSCoW_method</td>
+								</tr>
+								<tr>
+									<td>11/11/15</td>
+									<td>http://stackoverflow.com/questions/16475979/what-is-functional-and-non-functional-requirement</td>
+								</tr>
+								<tr>
+									<td>19/11/15</td>
+									<td>COMP203P: Software Engineering & Human Computer Interaction</td>
+								</tr>
+								<tr>
+									<td>19/11/15</td>
+									<td>http://www.wildapricot.com/articles/how-to-write-effective-meeting-minutes</td>
+								</tr>
+								<tr>
+									<td>20/11/15</td>
+									<td>https://moqups.com</td>
+								</tr>
+								<tr>
+									<td>07/12/15</td>
+									<td>https://trello.com</td>
+								</tr>
+								<tr>
+									<td>09/12/15</td>
+									<td>http://hci.rwth­aachen.de/borchers­old/cs377c/Assignment4/CS377C­PatternsHW4.PDF</td>
+								</tr>
+								<tr>
+									<td>09/12/15</td>
+									<td>http://www.smashingmagazine.com/2011/11/extensive­guide­web­form­usability/</td>
+								</tr>
+							</tbody>
+						</table>
+					</p>
+					<p class="lead">
+						COMP205P: JAN-APR
+                    </p>
+					<p>
+						<table class="table table-bordered table-striped">
+							<thead>
+								<tr class="success">
+									<th>Date of First Usage</th>
+									<th>Resource</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>18/01/16</td>
+									<td>https://www.proboards.com/</td>
+								</tr>
+							</tbody>
+						</table>
+					</p>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	<!-- Content row 4 -->
+	<a name="hci"></a>
+	<div class="content-section-b">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <hr class="section-heading-spacer">
+                    <!-- clearfix makes it so elements are not side by side -->
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">HCI Analysis</h2>
+					<p>
+						In order for this project to be successful, we need to make sure that the users are not hindered by using the application in any way but instead are able 
+						to navigate through each page with ease. This has been particularly emphasised by the clients with a primary goal being ease of use. Due to this, it 
+						would be wise for us to analyse the human computer interaction with an expected target user. In doing so, we would be able to see how our current plan 
+						works as well as on how we could improve the usability. 
+					</p>
+					<p>
+						A key difference in this project compared to others is that the application to be designed has never been done before so we were unable to carry out a 
+						thorough competitor analysis. This therefore meant it was all the more important to interview a potential user to understand their key needs. 
+					</p>
+					<p class="lead">
+						Persona
+                    </p>
+					<p>
+						In order for us to understand the user needs, we carried out a user interview with a single persona created. As our application is only targeted at hospital 
+						workers, multiple personas are not needed. 	
+					</p>
+					 <img class="img-responsive img-rounded" src="./Images/persona.jpg" ALIGN="RIGHT">
+					 <p>
+						User: 
+					 </p>
+					 <p>
+						A medical doctor who is neutral towards new technology.
+					 </p>
+					<p>
+						Background: 
+					</p>
+					<p>
+						A 34 year old neurologist in London. He enjoys interacting with patients, trying to build up strong relationships with everyone he meets. Throughout his day, 
+						he jots down little notes for himself on his notepad that he keeps with him constantly. He considers himself quite traditional in the way he prefers pen and 
+						paper over the more modern methods of keeping track of notes. The hospital he works at has slowly introduced more computer dependant software that he is now 
+						required to use multiple times a day. He isn't opposed to the new methods, sometimes finds new applications beneficial if they have a simple, responsive design. 
+						However, he does find them annoyingly tedious at times. Sometimes he has no idea on how to use a specific software due to so many different options to pick from 
+						for the simplest of tasks, taking time from his day and that of the IT support staff. Even the computer he uses on daily basis annoys him constantly by freezing 
+						at inconvenient times. This means that he has to restart his computer and begin fresh on his recent tasks.
+					</p>
+					<p class="lead">
+						HCI Considerations
+                    </p>
+					<p>
+						Although our client has specifically requested a basic user interface, there are still considerations we can make to improve usability. For example, the 
+						addition of unnecessary features, or the layout of the page can be of hindrance to the usability of the system. Below is a documentation of some bits and 
+						pieces we have discovered should help in this aspect:
+					</p>
+					<h4>
+						Buttons
+					</h4>
+					<p>
+						Buttons are used widely throughout web design, and there is no doubt that almost everybody can relate to the situation of wasting extended periods of time 
+						hunting for subtle buttons. That situation is undoubtedly what we wish to avoid. What we need to do is provide users with clearly labelled, well coloured 
+						buttons that are large enough to easily click. Not only this, but they should give the user some idea of where the button will lead them to, if it does 
+						lead them away from the current page.
+					</p>
+					<h4>
+						Navigation Bar
+					</h4>
+					<p>
+						Our client has requested that the system use the UCL Indigo theme. The main feature from which that we will use is the navigation bar at the top of the page. 
+						This gives us some opportunities, it shows a directory tree of pages above the current one which we may wish to adapt to show different stages of submission 
+						requirements for patient processing. For example, it could show Patient Details >> Upload Pictures >> Patient Confirmation if you are on the third stage of 
+						submitting a scan for analysis. See below for an example of it in use on the PLORAS website.
+					</p>
+						 <img class="img-responsive img-rounded" src="./Images/directory_tree.png">
+					<h4>
+						Form Layout
+					</h4>
+					<p>
+						While it may seem something fairly obvious and a minuscule task, creating an effective form requires thought. In our case, we know precisely what level our 
+						users will be at and what will need further explanation. The main way of communicating what a given option (such as a text field or drop down menu) is for 
+						is using labels. Clever forms combine the title with the description succinctly by making use of bold text or italics. We need to keep the design between 
+						pages consistent, and also consider using the least aggressive wording possible because we want the form to be more like an interview than an interrogation.
+						Other ideas include grouping options together with white space in the correct places, and placing input boxes below the box description, as this speeds up 
+						the reading process.
+					</p>
+					<p>
+						Another feature which is useful is separating primary and secondary actions. For example having save and submit buttons or back and cancel buttons, in order 
+						to allow the user to step forwards or back the amount that they require.
+					</p>
+					<p>
+						Validation of fields will be important as it allows us to check information before it is pushed to the database. It should be kept as minimal as required 
+						and should not restrict users where possible.
+					</p>
+					<p>
+						Help can be provided in many ways. A common way is a small question mark icon, or similar, that when hovered over or clicked displays a pop-up text box 
+						further explaining the input required. This would be the preferred method for us as it is widely used and also intuitive.
+					</p>
+					<p class="lead">
+						User Needs
+                    </p>
+					<p>
+						<table class="table table-bordered table-striped">
+						<thead>
+							<tr class="success">
+								<th>ID</th>
+								<th>Details</th>
+								<th>Reasoning</th>
+								<th>Type</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>UN1</td>
+								<td>The application should have no unnecessary features.</td>
+								<td>The purpose of the application is to serve a single purpose, extra features would be redundant.</td>
+								<td>Non-functional</td>
+							</tr>
+							<tr>
+								<td>UN2</td>
+								<td>The application should aim to be as easy to use as possible.</td>
+								<td>Hospital professionals are strained for time which means they should be able to navigate through the application quickly.</td>
+								<td>Non-functional</td>
+							</tr>
+							<tr>
+								<td>UN3</td>
+								<td>The scan results should be saved to the user's profile.</td>
+								<td>This will allow the user to access the same scan multiple times without reprocessing, even if they close the application.</td>
+								<td>Functional</td>
+							</tr>
+							<tr>
+								<td>UN4</td>
+								<td>The user should be able to cancel a prediction request.</td>
+								<td>If a prediction is no longer required then they should be able to be cancelled.</td>
+								<td>Functional</td>
+							</tr>
+							<tr>
+								<td>UN5</td>
+								<td>The user should be able to delete a patient's data.</td>
+								<td>If the patient no longer wants to have their data stored then they could request for their information to be deleted.</td>
+								<td>Functional</td>
+							</tr>
+						</tbody>
+					</table>
+					</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
