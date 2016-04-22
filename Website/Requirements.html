@@ -44,6 +44,7 @@
                         <a href="./Project Management.html" class="dropdown-toggle" data-toggle="dropdown">Project Management <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="./Project Management.html">Record of Progress</a></li>
+							<li><a href="./Project Management.html#work">Work Packages Completed</a></li>
                             <li><a href="./Project Management.html#reports">Bi-weekly Reports</a></li>
                             <li><a href="./Project Management.html#meeting">Meeting Minutes</a></li>
                         </ul>
@@ -73,6 +74,7 @@
                             <li><a href="./Development.html#server">Server Side</a></li>
                             <li><a href="./Development.html#plans">Plans for PoC</a></li>
                             <li><a href="./Development.html#testing">Testing</a></li>
+							<li><a href="./Development.html#collaboration">Collaboration Opportunities</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -532,11 +534,13 @@
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Final Requirements</h2>
 					<p>
-						The requirements we have gathered in the table below have been obtained from: 
+						The requirements identified for the final proof of concept application have been gathered in the table below which have been obtained from: 
 						<li>Client interviews</li>
 						<li>Use cases</li>
 						<li>HCI analysis</li>
 						<li>UI prototyping</li>
+						These have also been continuously updated over the course of the second term as we steadily built our application. New needs came up and some requirements 
+						were no longer needed.
 					</p>
 					<p>
 						The requirements are set out in the MoSCoW style format where they are ordered in order of priority. We shall aim to get the more important Must Have and 
@@ -550,6 +554,7 @@
 								<th>Type</th>
 								<th>Activity</th>
 								<th>Priority</th>
+								<th>Completed</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -559,6 +564,7 @@
 								<td>Functional</td>
 								<td>Processing</td>
 								<td>Must Have</td>
+								<td>Yes</td>
 							</tr>
 							<tr>
 								<td>RQ2</td>
@@ -566,6 +572,7 @@
 								<td>Functional</td>
 								<td>Processing</td>
 								<td>Must Have</td>
+								<td>Yes</td>
 							</tr>
 							<tr>
 								<td>RQ3</td>
@@ -573,6 +580,7 @@
 								<td>Functional</td>
 								<td>Processing</td>
 								<td>Must Have</td>
+								<td>Yes</td>
 							</tr>
 							<tr>
 								<td>RQ4</td>
@@ -580,6 +588,7 @@
 								<td>Functional</td>
 								<td>User Interface</td>
 								<td>Must Have</td>
+								<td>Yes</td>
 							</tr>
 							<tr>
 								<td>RQ5</td>
@@ -587,97 +596,127 @@
 								<td>Functional</td>
 								<td>Security</td>
 								<td>Must Have</td>
+								<td>Yes</td>
+							</tr>
+							<tr>
+								<td>RQ6</td>
+								<td>The system shall allow administrator users to create new users, with or without administrator privileges.</td>
+								<td>Functional</td>
+								<td>Security</td>
+								<td>Must Have</td>
+								<td>Yes</td>
 							</tr>
                          <tr>
-								<td>RQ6</td>
+								<td>RQ7</td>
 								<td>The system should be secure against cyber attacks.</td>
 								<td>Non-Functional</td>
 								<td>Security</td>
 								<td>Must Have</td>
+								<td>Yes</td>
 							</tr>
 							<tr>
-								<td>RQ7</td>
+								<td>RQ8</td>
 								<td>The system shall use a server to receive uploaded scans and then run the automated processes on them to generate a prediction.</td>
 								<td>Functional</td>
 								<td>Processing</td>
 								<td>Must Have</td>
+								<td>Yes</td>
 							</tr>
 							<tr>
-								<td>RQ8</td>
+								<td>RQ9</td>
+								<td>The system shall allow administrator users to edit the job queue for processing patient predictions.</td>
+								<td>Functional</td>
+								<td>Processing</td>
+								<td>Must Have</td>
+								<td>Yes</td>
+							</tr>
+							<tr>
+								<td>RQ10</td>
 								<td>The system shall display the patient prediction in HTML on the web application.</td>
 								<td>Functional</td>
 								<td>Results</td>
 								<td>Must Have</td>
+								<td>Yes</td>
 							</tr>
 							<tr>
-								<td>RQ9</td>
-								<td>The system shalll have a login page to control access the web app.</td>
+								<td>RQ11</td>
+								<td>The system shall have a login page to control access to the web app.</td>
 								<td>Functional</td>
 								<td>Security</td>
 								<td>Must Have</td>
+								<td>Yes</td>
 							</tr>
 							<tr>
-								<td>RQ10</td>
+								<td>RQ12</td>
 								<td>The system shall permanently store all uploaded images.</td>
 								<td>Functional</td>
 								<td>Processing</td>
 								<td>Should Have</td>
+								<td>Yes</td>
+							</tr>							
+							<tr>
+								<td>RQ13</td>
+								<td>The system shall allow a user to request an account to access the application.</td>
+								<td>Functional</td>
+								<td>General</td>
+								<td>Should Have</td>
+								<td>Yes</td>
 							</tr>
 							<tr>
-								<td>RQ11</td>
+								<td>RQ14</td>
 								<td>The system shall include compulsory data to be filled in with the upload of every scan.</td>
 								<td>Functional</td>
 								<td>User Interface</td>
 								<td>Should Have</td>
+								<td>Yes</td>
 							</tr>
-                         <tr>
-                         		<td>RQ12</td>
-                             <td>The system should have an attractive design.</td>
-                             <td>Non-functional</td>
-                             <td>Design</td>
-                             <td>Should Have</td>
-                         </tr>
 							<tr>
-								<td>RQ13</td>
+								<td>RQ15</td>
+								<td>The system should have an attractive design.</td>
+								 <td>Non-functional</td>
+								 <td>Design</td>
+								 <td>Should Have</td>
+								 <td>Yes</td>
+							</tr>
+							<tr>
+								<td>RQ16</td>
 								<td>The system shall allow a print friendly version of the patient prediction to be downloaded.</td>
 								<td>Functional</td>
 								<td>Results</td>
 								<td>Could Have</td>
+								<td>Yes</td>
 							</tr>
 							<tr>
-								<td>RQ14</td>
+								<td>RQ17</td>
 								<td>The system shall have an additional comments section for extra information with the uploaded scan.</td>
 								<td>Functional</td>
 								<td>User Interface</td>
 								<td>Could Have</td>
+								<td>Yes</td>
 							</tr>
 							<tr>
-								<td>RQ15</td>
-								<td>The system shall not store uploaded images if requested by patient</td>
-								<td>Functional</td>
-								<td>Processing</td>
-								<td>Could Have</td>
-							</tr>
-							<tr>
-								<td>RQ16</td>
+								<td>RQ18</td>
 								<td>The system shall present a picture of the brain scan image in the results page.</td>
 								<td>Functional</td>
 								<td>Results</td>
 								<td>Would Have</td>
+								<td>No</td>
 							</tr>
 							<tr>
-								<td>RQ17</td>
+								<td>RQ19</td>
 								<td>The system shall have a desktop application to allow offline usage of the prediction service.</td>
 								<td>Functional</td>
 								<td>General</td>
 								<td>Would Have</td>
+								<td>No</td>
 							</tr>
 							<tr>
-								<td>RQ18</td>
+								<td>RQ20</td>
 								<td>The system should allow scans from different types of MRI scanners.</td>
 								<td>Non-Functional</td>
 								<td>General</td>
 								<td>Would Have</td>
+								<td>No</td>
 							</tr>
 						</tbody>
 					</table>

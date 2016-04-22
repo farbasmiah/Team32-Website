@@ -44,6 +44,7 @@
                         <a href="./Project Management.html" class="dropdown-toggle" data-toggle="dropdown">Project Management <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="./Project Management.html">Record of Progress</a></li>
+                            <li><a href="./Project Management.html#work">Work Packages Completed</a></li>
                             <li><a href="./Project Management.html#reports">Bi-weekly Reports</a></li>
                             <li><a href="./Project Management.html#meeting">Meeting Minutes</a></li>
                         </ul>
@@ -73,6 +74,7 @@
                             <li><a href="./Development.html#server">Server Side</a></li>
                             <li><a href="./Development.html#plans">Plans for PoC</a></li>
                             <li><a href="./Development.html#testing">Testing</a></li>
+							<li><a href="./Development.html#collaboration">Collaboration Opportunities</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -102,7 +104,7 @@
 						A record of the progress of our project shall be outlined in a table below, separated into the two halves of the project.
 					</p>
 					<p>
-						The first half of the project has been primarily aimed at research and prototyping. We have carried our sufficient research into what our clients want 
+						The first half of the project has been primarily aimed at research and prototyping. We have carried out sufficient research into what our clients want 
 						and presented them in the form of MoSCoW style requirements. Some prototypes have been created on the user interface with Use Cases and HCI analysis 
 						carried out on them to ensure the requirements have been fulfilled. As well as this, we have produced some scripts to be run on the server side of the 
 						web application to be produced. 
@@ -159,16 +161,138 @@
 						COMP205P: JAN-APR
                     </p>
 					<p>
-						Coming soon.
+						During the second half of the project we worked on coding the front end and linking it to the server side whilst generating actual predictions. This was done 
+						by having each person in the group concentrating on a specific section which were the Django front end, virtual machine back end and the spreadsheet 
+						predictions. These were then linked together to produce a working web application that fulfilled all of the Must have, Should have and Could have requirements. 
+						The end result means a user can simply upload their fMRI brain scan and retrieve their prediction without needing to manually complete any other tasks.
 					</p>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr class="success">
+								<th>Task No</th>
+								<th>Task</th>
+								<th>Start Date</th>
+								<th>End Date</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>Project Management</td>
+								<td>12/01/16</td>
+								<td>27/04/16</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Django Application</td>
+								<td>19/01/16</td>
+								<td>19/04/16</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>Prediction Spreadsheets</td>
+								<td>26/01/16</td>
+								<td>04/04/16</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>Virtual Machine Back End</td>
+								<td>07/03/16</td>
+								<td>18/04/16</td>
+							</tr>
+						</tbody>
+					</table>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Content row 2 -->
-	<a name="reports"></a>
+	    <!-- Content row 2 -->
+	<a name="work"></a>
 	<div class="content-section-b">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <hr class="section-heading-spacer">
+                    <!-- clearfix makes it so elements are not side by side -->
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Work Packages Completed</h2>
+					<p>
+						For our project, we distributed the workload evenly amongst us, with specific primary tasks for each team member. In order to do this, we came up with a list 
+						of work packages with different priorities. This list was not definite and was changing throughout the project as new and unexpected tasks appeared. 
+						Throughout the project, we constantly met up and allocated new tasks, discussed issues we had and worked together to complete the more challenging tasks. This 
+						ended up being a great method for us as we never felt that we were behind on work at any point during the term. Each team member’s work packages that were 
+						completed can be seen below.
+					</p>
+					<p class="lead">
+						Jedrzej Stuczynski
+                    </p>
+					<p>
+						During the first part of the project, which is during COMP204P, I was designated to work on the automation scripts in MATLAB. First, I had to familiarise 
+						myself with the original scripts PLORAS wanted automated and then I used the inbuilt toolbar batch system. For each step required in the processing I have 
+						encapsulated the required functionality into separate functions with one master function that is responsible for controlling the process. 
+					</p>
+					<p>
+						After that, when the Django front end was created, I worked on a bridge between the automation scripts and the front end. I created a python script that 
+						would initialise processing images for a given patient whenever a job to do so was submitted. When a user submits a new job, it adds it to the associated 
+						application database. We then use functionalities of crontab, in Linux, to call every few minutes where a python script checks if there are any jobs to 
+						process and if so, it processes it. I have implemented mechanisms for checking if the processing of a certain job is in progress to prevent concurrency 
+						issues. We also skip jobs if for some reason they failed. 
+					</p>
+					<p>
+						Then, when we finally had a working local version of the system, I was responsible for putting it all on the Virtual Machine that was provided to us by our 
+						client. There were a number of issues to overcome in this part, such as making Apache work with mod_wsgi, solving permission problems with SELinux and making 
+						it possible to save files in an appropriate location. Then it was a matter of correctly setting up a crontab job that was described in the paragraph above.
+					</p>
+					<p class="lead">
+						Farbas Miah
+                    </p>
+					<p>
+						For COMP204P, my main job was of producing the documentation for the group. This meant I worked a lot on the project management through the production of 
+						the bi-weekly reports, meeting minutes, project website and the detailed record of progress for each of the work packages that were completed. I also worked 
+						on the planning of the project to produce the final PoC carrying out a HCI analysis, production of MoSCow style requirements and user needs, and also an 
+						initial PoC.
+					</p>
+					<p>
+						My primary role for COMP205P was of the production of the Django application front end. Initially I set about producing all the required pages for the user 
+						interface with the UCL Indigo theme as required by the clients. Then, I went through our requirements and slowly went about implementing each of them. Some 
+						additional requirements were added as we progressed, based on our client's feedback. Some of the major requirements completed were the ability to create new 
+						encrypted accounts with and without administrator privileges, logging in capability, upload fMRI scans with a form that have various compulsory and optional 
+						sections onto a database, ability to view, delete and print scans that have been processes by the server. There were also some specific administrator 
+						capabilities that were set up. 
+					</p>
+					<p>
+						I have also been in charge of the documentation related tasks for COMP205P, producing bi-weekly reports and meeting minutes. Also, I've been adding additional 
+						content to the team website such as the updated requirements and latest product features.
+					</p>
+					<p class="lead">
+						Daniel Blackwell
+                    </p>
+					<p>
+						In this second module of the two System Engineering modules I have been working closely with our project client and main point of contact in the PLORAS team, 
+						Cathy Price. This was in order to produce a safe prediction from the information gleamed from Jedrzej’s neural image analysis. Whilst my role hasn’t been 
+						especially programming language heavy, it was important that at least one member of the team is familiar with how these predictions come about and I was also 
+						helping to produce statistics for Cathy in order to help categorise patients.
+					</p>
+					<p>
+						The most time consuming part of my work was using the PLORAS patient database to categorise patients based on levels of damage to particular functions of 
+						language, then the demographics of the patient and also the recovery time between the stroke and the scan. At Cathy’s request, this was done in an excel 
+						spreadsheet that the PLORAS team currently use. While it was not the best-suited tool for the job, it was the one with most familiarity to the client, which 
+						made it the most useful.
+					</p>
+					<p>
+						Having seen the distribution of patients along the various dimensions, the PLORAS team came up with a good generalised classification of patients, that while 
+						only considering 7 factors, can give an accurate prediction as to the level and time period of recovery for language in patients post stroke. I coded this 
+						matrix up into Python so that it could be used from the Django application produced by Farbas.
+					</p>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+    <!-- Content row 3 -->
+	<a name="reports"></a>
+	<div class="content-section-a">
         <div class="container">
             <div class="row">
                 <div>
@@ -232,9 +356,9 @@
         </div>
     </div>
 	
-	<!-- Content row 3 -->
+	<!-- Content row 4 -->
 	<a name="meeting"></a>
-    <div class="content-section-a">
+    <div class="content-section-b">
         <div class="container">
             <div class="row">
                 <div>

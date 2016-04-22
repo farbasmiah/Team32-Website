@@ -44,6 +44,7 @@
                         <a href="./Project Management.html" class="dropdown-toggle" data-toggle="dropdown">Project Management <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="./Project Management.html">Record of Progress</a></li>
+							<li><a href="./Project Management.html#work">Work Packages Completed</a></li>
                             <li><a href="./Project Management.html#reports">Bi-weekly Reports</a></li>
                             <li><a href="./Project Management.html#meeting">Meeting Minutes</a></li>
                         </ul>
@@ -73,6 +74,7 @@
                             <li><a href="./Development.html#server">Server Side</a></li>
                             <li><a href="./Development.html#plans">Plans for PoC</a></li>
                             <li><a href="./Development.html#testing">Testing</a></li>
+							<li><a href="./Development.html#collaboration">Collaboration Opportunities</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -111,10 +113,18 @@
                             <li>
                                 <a href="https://youtu.be/ScJ3Kv7SFW8" class="btn btn-default btn-lg">
                                     <i class="fa fa-youtube-play fa-fw"></i>
-                                    <span class="button-title">Video Explanation</span>
+                                    <span class="button-title">Initial Video Explanation</span>
+                                </a>
+                            </li>
+							<li>
+                                <a href="https://youtu.be/ScJ3Kv7SFW8" class="btn btn-default btn-lg">
+                                    <i class="fa fa-youtube-play fa-fw"></i>
+                                    <span class="button-title">Video of final PoC</span>
                                 </a>
                             </li>
                         </ul>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/ScJ3Kv7SFW8" frameborder="0" allowfullscreen></iframe>
+						&nbsp&nbsp&nbsp
 						<iframe width="560" height="315" src="https://www.youtube.com/embed/ScJ3Kv7SFW8" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
@@ -154,9 +164,73 @@
             </div>
         </div>
     </div>
-
-    <!-- Content row 2 -->
-	<div class="content-section-b">
+	
+	<!-- Content row 2 -->
+    <div class="content-section-b">
+        <div class="container">
+            <div class="row">
+				<h2 class="section-heading">Product Features</h2>
+				<p>
+					Our web application has a front end that, was built with Django, which allows users to upload fMRI brain scans and view the predictions that have been 
+					generated. The predictions are generated on the server side through the use of a virtual machine. Once the uploaded scans are received, they are first 
+					processed by the MATLAB scripts to produce a normalised overview of the brain with damaged regions indicated. A spreadsheet is then generated which is 
+					compared to a lookup table to produce the patient's prediction. 
+				</p>
+				<br></br>
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <p class="lead">
+                        Very simple user interface with no confusing or unnecessary features
+                    </p>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6 col-sm-6">
+                    <img class="img-responsive img-rounded" src="./Images/Options.PNG">
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	<!-- Content row 3 -->
+    <div class="content-section-a">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <!-- clearfix makes it so elements are not side by side -->
+                    <div class="clearfix"></div>
+                    <p class="lead">
+                        Easy to understand results with a print friendly display
+                    </p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive img-rounded" src="./Images/Results.PNG">
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	<!-- Content row 4 -->
+    <div class="content-section-b">
+        <div class="container">
+            <div class="row">
+				<br></br>
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <p class="lead">
+                        Addtional admin features to create new users and alter the job queue
+                    </p>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6 col-sm-6">
+                    <img class="img-responsive img-rounded" src="./Images/OptionsAdmin.PNG">
+                </div>
+            </div>
+        </div>
+    </div>
+	
+    <!-- Content row 5 -->
+	<div class="content-section-a">
         <div class="container">
             <div class="row">
                 <div>
@@ -165,7 +239,7 @@
                     <div class="clearfix"></div>
                     <h2 class="section-heading">About</h2>
 					<p>
-						This project is part of our second year UCL Computer Science modules COMP203P and COMP204P. We are a team of three with various strengths and weaknesses 
+						This project is part of our second year UCL Computer Science modules COMP204P and COMP205P. We are a team of three with various strengths and weaknesses 
 						which we hope to utilise to our advantage throughout. 
 					</p>
                     <img class="img-responsive img-rounded" src="./Images/team_picture.jpg" ALIGN="RIGHT">

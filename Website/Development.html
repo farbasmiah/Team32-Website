@@ -44,6 +44,7 @@
                         <a href="./Project Management.html" class="dropdown-toggle" data-toggle="dropdown">Project Management <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="./Project Management.html">Record of Progress</a></li>
+							<li><a href="./Project Management.html#work">Work Packages Completed</a></li>
                             <li><a href="./Project Management.html#reports">Bi-weekly Reports</a></li>
                             <li><a href="./Project Management.html#meeting">Meeting Minutes</a></li>
                         </ul>
@@ -73,6 +74,7 @@
 							<li><a href="./Development.html#server">Server Side</a></li>
                             <li><a href="./Development.html#plans">Plans for PoC</a></li>
                             <li><a href="./Development.html#testing">Testing</a></li>
+                            <li><a href="./Development.html#collaboration">Collaboration Opportunities</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -452,5 +454,41 @@
             </div>
         </div>
     </div>
+	
+	<!-- Content row 6 -->
+	<a name="collaboration"></a>
+    <div class="content-section-b">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <hr class="section-heading-spacer">
+                    <!-- clearfix makes it so elements are not side by side -->
+                    <div class="clearfix"></div>
+					<img class="img-responsive img-rounded" src="./Images/Flow.PNG" ALIGN="RIGHT">
+                    <h2 class="section-heading">Collaboration Opportunities for Future Development</h2>
+					<p>
+						While our system has primarily been developed to work with the scanning system in place at BUCNI (Birkbeck-UCL Centre for Neuroimaging), a Siemens Avanto MRI 
+						scanner, it is possible for a number of other scanners to produce images that could be processed in a similar way.
+					</p>
+					<p>
+						The first part to need altering would be the conversion of image slices into a 3-dimensional image; currently our system is checking for a specific format and 
+						number of slices as per would be expected from a BUCNI scan. Any collaborating research centres would need to build a pipe that could take their images and 
+						convert them to the format required for the proceeding stages. A good point for this would be at the .IMG stage if possible. The process is illustrated with 
+						an arrow to show the ideal connector point.
+					</p>
+					<p>
+						This would require adjustments from our side to allow the IMGs to be uploaded and directly processed from this point. There may also be a 
+						requirement for certain parameters to be altered such as the contrast tolerance used for identifying lesions as different intensity scanners would produce 
+						different levels of contrast.
+					</p>
+					<p>
+						An alternative would be to perform self processing independently then submit the scores for the different lesion areas to allow the prediction to still be 
+						made for a given patient. This data could also be useful in enhancing the accuracy of future predictions. 
+					</p>
+                </div>
+            </div>
+        </div>
+    </div>
+	
 </body>
 </html>
