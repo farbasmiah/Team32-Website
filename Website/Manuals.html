@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Background - Automating PLORAS</title>
+    <title>Manuals - Automating PLORAS</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -15,7 +15,7 @@
     <link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top topnav">
+    <nav class="navbar navbar-default navbar-fixed-top topnav">
         <div class="container topnav">
 		
             <!-- Logo -->
@@ -31,13 +31,13 @@
             <div class="collapse navbar-collapse" id="mainNavBar">
                 <ul class="nav navbar-nav">
                     <li><a href="./index.html" class="navbar-brand">Automating PLORAS</a></li>
-                    <li class="active" class="dropdown">
+                    <li class="dropdown">
                         <a href="./Background.html" class="dropdown-toggle" data-toggle="dropdown">Background <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="./Background.html">The Clients</a></li>
                             <li><a href="./Background.html#context">Context</a></li>
                             <li><a href="./Background.html#initial">Initial Problem</a></li>
-                            <li><a href="./Background.html#goals">Goals for Success</a></li>
+							<li><a href="./Background.html#goals">Goals for Success</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -71,14 +71,14 @@
                         <ul class="dropdown-menu">
                             <li><a href="./Development.html">Prototypes</a></li>
                             <li><a href="./Development.html#interface">User Interface</a></li>
-                            <li><a href="./Development.html#server">Server Side</a></li>
+							<li><a href="./Development.html#server">Server Side</a></li>
                             <li><a href="./Development.html#plans">Plans for PoC</a></li>
                             <li><a href="./Development.html#testing">Testing</a></li>
-							<li><a href="./Development.html#architecture">Architectural Diagram</a></li>
-							<li><a href="./Development.html#collaboration">Collaboration Opportunities</a></li>
+                            <li><a href="./Development.html#architecture">Architectural Diagram</a></li>
+                            <li><a href="./Development.html#collaboration">Collaboration Opportunities</a></li>
                         </ul>
                     </li>
-					<li class="dropdown">
+					<li class="active" class="dropdown">
                         <a href="./Manuals.html" class="dropdown-toggle" data-toggle="dropdown">Manuals <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="./Manuals.html">User Manual</a></li>
@@ -95,107 +95,59 @@
             </div>
         </div>
     </nav>
-	
-	<!-- Content row 1 -->
-    <div class="content-section-a">
-        <div class="container">
-            <div class="row">
-                <div>
-                    <hr class="section-heading-spacer">
-                    <!-- clearfix makes it so elements are not side by side -->
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">The Clients</h2>
-					<img class="img-responsive img-rounded" src="./Images/PLORAS_Team.jpg" ALIGN="RIGHT">
-					<p class="lead">
-                        Wellcome Trust
-                    </p>
-					<p>
-						The Wellcome Trust is a biomedical research charity based in Euston, London. They are one of the largest providers for funding for scientific research. 
-						The aim of the Trust is to "achieve extraordinary improvements in health by supporting the brightest minds".
-					</p>
-					<p>
-						We have been working directly with the PLORAS team which is led by Professor Cathy Price, the Principle Investigator.
-					</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Content row 2 -->
-	<a name="context"></a>
-	<div class="content-section-b">
+	
+	<script src="pdfobject.js"></script>
+    <!-- Content row 1 -->
+	<div class="content-section-a">
         <div class="container">
             <div class="row">
                 <div>
                     <hr class="section-heading-spacer">
                     <!-- clearfix makes it so elements are not side by side -->
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Context</h2>
+                    <h2 class="section-heading">User Manual</h2>
 					<p>
-						This project looks at recovery of language difficulties after stroke (aphasia). The PLORAS team hopes to give future stroke survivors a prediction on
-						their chances of recovery by providing information in a meaningful format (e.g. 85% of patients like you recovered their speech within 2 years).
+						Please click on the download link below to view or download a PDF version of the User Manual.
 					</p>
 					<p>
-						Currently, they have a set of procedures in place for making the predictions but the procedure is not streamlined and they have not yet developed the 
-						technical specification. This therefore means a great deal of work and time is required to produce each prediction for every patient, due to it being 
-						done manually.
+						<a href="./PDF/Team 32 - User Manual.pdf">Download User Manual</a></br>
 					</p>
-					<p>
-						They therefore need Computer Scientists for this project to streamline the whole process, with the specific challenges to be met are: 
-						<li>Create a user interface that will allow hospitals to upload brain scans</li>
-						<li>Stream line the PLORAS team's current software so that scans can be read and predictions made automatically</li>
-						<li>Summarise the predictions (using a look up table) in a meaningful medical report</li>
-						<li>Allow the medical staff access to this medical report</li>
-					</p>
+					<div>
+						<iframe src="./PDF/Team 32 - User Manual.pdf" width="100%" height="600px">
+							This browser does not support PDFs. Please download the PDF to view it: <a href="/PDF/Team 32 - User Manual.pdf">Download PDF</a>
+						</iframe>
+					</div>
                 </div>
             </div>
         </div>
     </div>
 	
-	<!-- Content row 3 -->
-	<a name="initial"></a>
-    <div class="content-section-a">
+	<!-- Content row 2 -->
+	<a name="system"></a>
+    <div class="content-section-b">
         <div class="container">
             <div class="row">
                 <div>
                     <hr class="section-heading-spacer">
                     <!-- clearfix makes it so elements are not side by side -->
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Initial Problem</h2>
+                    <h2 class="section-heading">System Manual</h2>
 					<p>
-						<li>A hospital has to upload the MRI brain scan from a new stroke patient onto the PLORAS website manually.</li>
-						<li>The scans are downloaded and need to go through various steps to get the final prediction which are very slow and prevent fast results.</li>
-						<li>A report is then written to summarise the results and predictions for the scan which are then sent back to the hospital, taking a long time.</li>
-						<li>If these steps could be automated and streamlined then the waiting times and usability could be drastically improved.</li>
+						Please click on the download link below to view or download a PDF version of the System Manual.
 					</p>
+					<p>
+						<a href="./PDF/Team 32 - System Manual.pdf">Download System Manual</a></br>
+					</p>
+					<div>
+						<iframe src="./PDF/Team 32 - System Manual.pdf" width="100%" height="600px">
+							This browser does not support PDFs. Please download the PDF to view it: <a href="/PDF/Team 32 - System Manual.pdf">Download PDF</a>
+						</iframe>
+					</div>
                 </div>
             </div>
         </div>
     </div>
 	
-	<!-- Content row 4 -->
-	<a name="goals"></a>
-	<div class="content-section-b">
-        <div class="container">
-            <div class="row">
-                <div>
-                    <hr class="section-heading-spacer">
-                    <!-- clearfix makes it so elements are not side by side -->
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">Goals for Success</h2>
-					<p>
-						State what is needed for the project to be a success.
-						<li>Ensure a clear set of requirements are obtained from clients</li>
-						<li>Fulfil all of the MUST and SHOULD objectives in the MoSCoW style requirements</li>
-						<li>Be realistic with requirements set by the clients and know when to say No</li>
-						<li>Proper management of source code and other project artefacts</li>
-						<li>Identify the tool chains needed and test them thoroughly</li>
-						<li>Carry out a thorough HCI analysis to properly understand the needs in the user interface</li>
-						<li>Consistent communication between the team as well as with the clients</li>
-					</p>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 </html>
