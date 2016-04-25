@@ -76,6 +76,9 @@
                             <li><a href="./Development.html#testing">Testing</a></li>
                             <li><a href="./Development.html#architecture">Architectural Diagram</a></li>
                             <li><a href="./Development.html#collaboration">Collaboration Opportunities</a></li>
+                            <li><a href="./Development.html#technical">Technical Achievements</a></li>
+                            <li><a href="./Development.html#implementation">Implementation Details</a></li>
+                            <li><a href="./Development.html#design">Design Patterns</a></li>
                         </ul>
                     </li>
 					<li class="dropdown">
@@ -372,10 +375,10 @@
                     <h2 class="section-heading">Plans for PoC</h2>
 					<p>
 						Through our research and knowledge gained through COMP204P, we have a strong understanding of our plans for the second term. There are two major parts to 
-						the solution for our initial problem statement. We shall build a front-end and back-end for our application.
+						the solution for our initial problem statement. We shall build a front end and back end for our application.
 					</p>
 					<p class="lead">
-						Front-End
+						Front End
                     </p>
 					<p>
 						For the front-end, we have decided to build our application as a website so that it is accessible to any computer that has a web browser without the need
@@ -384,10 +387,10 @@
 						requirements, with an emphasis being placed on ease of access.
 					</p>
 					<p class="lead">
-						Back-End
+						Back End
                     </p>
 					<p>
-						For the back-end, the primary aim is to ensure everything is automated such that no manual adjustments are needed for a prediction to be made. There 
+						For the back end, the primary aim is to ensure everything is automated such that no manual adjustments are needed for a prediction to be made. There 
 						are various processes that the raw images from the fMRI scan need to go through. Some of these processes occur in MATLAB with some automation already 
 						completed by scripts also written in MATLAB. This decision has proved advantageous as it is possible to integrate the MATLAB scripts with the Django 
 						framework without much difficulty.
@@ -458,6 +461,14 @@
 						<li>Increased security of the application</li>
 						<li>Greater range of available features</li>
 					</p>
+					<p>
+						As our system uses very much real world data that is very hard to replicate, it has proven impossible for us to automate testing on the processing of the 
+						brain scans as we cannot have access to enough test data due to privacy reasons. Not only this, but we don't have the skill to analyse the results to the 
+						correct level. As such, we relied on our clients to provide us with feedback relating to the image processing. One area that could be easily tested, was the 
+						generation of the prediction given the output of the damage percentages. For this I wrote the function to do this first into its own file, and wrote a python 
+						unit test to see if the different input values affected the prediction in the way expected. Manipulation of a range of values ensures that even edge cases 
+						will fall into the right category. 
+					</p>
                 </div>
             </div>
         </div>
@@ -511,6 +522,137 @@
 					<p>
 						An alternative would be to perform self processing independently then submit the scores for the different lesion areas to allow the prediction to still be 
 						made for a given patient. This data could also be useful in enhancing the accuracy of future predictions. 
+					</p>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	<!-- Content row 8 -->
+	<a name="technical"></a>
+	<div class="content-section-b">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <hr class="section-heading-spacer">
+                    <!-- clearfix makes it so elements are not side by side -->
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Technical Achievements</h2>
+					<p>
+						By far our largest technical achievement is the contribution to the analysis of patient recovery. While the PLORAS team have published a number of 
+						papers identifying which areas of the brain are vital in the recovery of language in stroke patients, they had not previously migrated this idea over to 
+						attempting to predict recovery time of patients. Not only have we contributed significantly towards the predictions, but we have also come up with a robust 
+						solution to allow the process of analysis to be automated. The way in which we have done this also means that the parameters can easily be altered and 
+						when more factors have been properly analysed, they can easily be added.
+					</p>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	<!-- Content row 9 -->
+	<a name="implementation"></a>
+    <div class="content-section-a">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <hr class="section-heading-spacer">
+                    <!-- clearfix makes it so elements are not side by side -->
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Implementation Details</h2>
+					<p>
+						Our system is hosted as a web application on a web server, accessible for the moment only within the UCL network. The web server is ran from a virtual 
+						machine within the PLORAS department, using the CentOS version of red-hat Linux and using Apache to host the site. Installation of the necessary components 
+						were done using the terminal. Our parts are installed by merely cloning the git repository that we have set up for the purpose of exactly this. Similarly, any 
+						updates are installed by using the git pull command - ideally this will be replaced with a git hook that automatically pulls any new commits from the master 
+						branch. The MATLAB part of the project runs on version r2015b and will also run on any version above r2014b. When Python support was added, the neuroimaging
+						toolkits and plugins used are SPM (Statistical Parametric Mapping, versions 11 and 12) and ALI.
+					</p>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	<!-- Content row 10 -->
+	<a name="design"></a>
+	<div class="content-section-b">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <hr class="section-heading-spacer">
+                    <!-- clearfix makes it so elements are not side by side -->
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Design Patterns</h2>
+					<p>
+						While developing the solution to our Systems Engineering project, we have tried to follow generally acceptable software engineering conventions by applying 
+						appropriate design patterns in our code. That way, our solution should be more robust, readable and theoretically it ought to be easier to perform any 
+						modifications. For our final proof of concept we ended up using the design patterns shown below.
+					</p>
+					<p class="lead">
+						Singleton
+                    </p>
+					<p>
+						This design pattern ensures that there exists only one instance of a particular class. In our case, the main back end processing is taking place in a MATLAB 
+						instance, which existence by itself requires a relatively significant (compared to, for example, the crontab scheduler) amount of space and CPU power. 
+						Therefore it was crucial only a single instance of it existed at the time and so we have implemented the singleton pattern. Before starting the MATLAB 
+						instance in the first place, the appropriate section of code checks if the processing is already taking place and if it is the case, it does not start a new 
+						instance and awaits for another opportunity.
+					</p>
+					<p class="lead">
+						Bridge
+                    </p>
+					<p>
+						Bridge design pattern is used in order to keep some given abstraction from its implementation separately so that they can be modified independently. As it 
+						was mentioned above, we use the MATLAB processing back end while our front end is done with the Django framework using Python. The processing scripts should 
+						be independent to the web-service. Therefore we have implemented a bridge design pattern for that purpose. When the given processing is supposed to be 
+						started, an appropriate Python method makes a call to the responsible MATLAB function that controls the concrete implementation of the further steps.
+					</p>
+					<p class="lead">
+						Chain of Responsibility
+                    </p>
+					<p>
+						As for the chain of responsibility design pattern, it is generally used for performing processing on a certain object while the procedure takes several 
+						steps. Its usage makes it much easier for adding new processing steps or changing the existing ones. In our case it was a rather obvious pattern to include 
+						as the processing of each patient needs to undergo, consists of several steps. Each produces an intermediate result, which needs to be performed in certain 
+						order in order to generate the final prediction for a patient. Each step has a dedicated script that does not directly interact with other parts of code that 
+						deal with different steps of the procedure.
+					</p>
+					<p class="lead">
+						Mediator
+                    </p>
+					<p>
+						For the mediator pattern, its purpose is to prevent objects directly interacting with each other. They use a mediator object for that very purpose. We have 
+						implemented this design pattern while developing the solution using the chain of responsibility pattern. When a given processing step is finished, it does 
+						not directly call the next one using its intermediate. For that purpose we have created a single master MATLAB script that controls the procedure. When the 
+						step is finished, it is responsible of using the intermediate data to call the next step until the whole procedure is done.
+					</p>
+					<p class="lead">
+						Model-View-Controller
+                    </p>
+					<p>
+						Model-View-Controller is the most common design pattern used when it comes to creating a web-based application. It is used in order divide parts responsible 
+						for handling the logic of the application, user interaction and displaying the actual data. When we decided on using the Django framework we had to use 
+						appropriate structure for our application that uses that particular design pattern. The views we have created, known as templates, in Django were separate to 
+						the controller responsible for all the logic in the system. 
+					</p>
+					<p class="lead">
+						Balking
+                    </p>
+					<p>
+						This design pattern is used for preventing performing operations on an object if it is not in a particular state. In our case we have used it for managing 
+						our job queue. When the queue gets the job object, it first checks whether it’s not being already processed and it has not failed beyond recovery. If it is 
+						the second case, that object is skipped and another one is pulled, otherwise it waits for another processing cycle to process a different job object. That 
+						way we also ensure that each object is processed once only.
+					</p>
+					<p class="lead">
+						Scheduler
+                    </p>
+					<p>
+						For the last, significant, design pattern used, we have introduced the scheduler pattern. Generally it is used for controlling when a single threaded code 
+						may be executed. In our case, to prevent drain on resources we do not check whether there is any job in our queue. We do it every given amount of time, which 
+						in our case is 10 minutes. Then if a job is available, it is processed and when it is finished, it checks if another one became available so it continues 
+						processing. Otherwise it waits that specified interval. In order to implement this, we have used CentOS’s crontab that is designed for running given jobs at 
+						specified times.
 					</p>
                 </div>
             </div>
